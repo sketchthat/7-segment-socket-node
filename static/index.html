@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO &amp; 7-Segment IoT</title>
+  </head>
+  <body>
+    <form>
+        <button>Press Me</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>    
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      var socket = io();
+      $('form').submit(function(){
+        socket.emit('button press');
+        return false;
+      });
+    </script>
+  </body>
+</html>
